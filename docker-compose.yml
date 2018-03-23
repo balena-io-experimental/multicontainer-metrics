@@ -15,3 +15,10 @@ services:
     build: ./data
     expose:
       - "8080"
+  metrics:
+    build: ./metrics
+    pid: "host"
+    network_mode: "host"
+    privileged: true
+    labels:
+      io.resin.features.balena-socket: '1'
